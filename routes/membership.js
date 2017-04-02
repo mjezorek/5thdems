@@ -239,7 +239,7 @@ router.post('/members/bulk', function(req, res) {
 		req.flash('members', "No files uploaded, please select a file to contine");
 		res.redirect('/membership/members/bulk');
 	}
-	let csv = req.files.bulkUpload;
+	var csv = req.files.bulkUpload;
 	var file = osTmpDir() + "/members.csv";
 	csv.mv(file);
 	CSV.fromPath(file).on("data", function(data) {
