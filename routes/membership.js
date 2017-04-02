@@ -200,7 +200,7 @@ router.get('/members/details/:id', function(req, res) {
 	MemberTypes.find({}, function(err, membertypes) {
 		MemberRoles.find({}, function(err, roles) {
 			Interests.find({}, function(err, interest) {
-				Precinct.find({},null, {sort: {name: 1}}, function(err, precinct) {
+				Precinct.find({},null, {sort: {legislative_district: 1}}, function(err, precinct) {
 					Members.findOne({'_id': req.params.id}).populate("residential_precinct").populate("service_precinct").populate("family_members").exec(function(err, data) {
 						res.render('app/members/edit',  {members: data,interests: interest, precinct: precinct, roles: roles, types: membertypes, message: req.flash('members')});
 					});
