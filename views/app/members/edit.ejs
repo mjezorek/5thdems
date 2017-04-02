@@ -151,90 +151,89 @@
                         <input type="text" name="date_paid" id="datepicker" value="<%=members.date_paid%>">
                     </div>
                 </div>
+                 <div class="form-group">
                 <h4>Additional Family Members</h4>
-  
+
                 
-                    <% if (members.family_members) {%>
-                    <table id="family_members" width="100%">
-                       <thead>
-                          <tr>
-                            <td><b>First Name</b></td>
-                            <td><b>Last Name</b></td>
-                            <td><b>Email</b></td>
-                            <td><b>Phone</b></td>
-                            <td><b>Edit/Delete</b></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (var i=0; i< members.family_members.length; i++) {%>
-                        <tr>
-                          <td><%= members.family_members[i].first_name %></td>
-                          <td><%= members.family_members[i].last_name %></td>
-                          <td><%= members.family_members[i].email %></td>
-                          <td>M:<%= members.family_members[i].mobile_phone %></td>
-                          <td><a href="/membership/members/details/<%=members.family_members[i].id%>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a href="/membership/members/delete/<%=members.family_members[i].id%>"><i class="fa fa-trash"></i></a></td>
-                          </tr>
-                          <%}%>
-                      </tbody>
-                  </table>
-                  <%}%>
-    
-          </div>
-          <div class="form-group">
-            <div class="col-sm-4">
-                <label>Member Interests</label>
-                <select name="interests" multiple id="interests">
+                <% if (members.family_members) {%>
+                <table id="family_members" width="100%">
+                 <thead>
+                  <tr>
+                    <td><b>First Name</b></td>
+                    <td><b>Last Name</b></td>
+                    <td><b>Email</b></td>
+                    <td><b>Phone</b></td>
+                    <td><b>Edit/Delete</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var i=0; i< members.family_members.length; i++) {%>
+                <tr>
+                  <td><%= members.family_members[i].first_name %></td>
+                  <td><%= members.family_members[i].last_name %></td>
+                  <td><%= members.family_members[i].email %></td>
+                  <td>M:<%= members.family_members[i].mobile_phone %></td>
+                  <td><a href="/membership/members/details/<%=members.family_members[i].id%>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a href="/membership/members/delete/<%=members.family_members[i].id%>"><i class="fa fa-trash"></i></a></td>
+              </tr>
+              <%}%>
+          </tbody>
+      </table>
+      <%}%>
 
-                    <% for (var i in interests) {%>
-                    <option value="<%=interests[i].id%>"
-                        <%if (members.interests.indexOf(interests[i].id) != "-1") {%>
-                        selected
-                        <%}%>
-                        >
-                        <%=interests[i].name%>
-                    </option>
-                    <%}%>
-                </select>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-6">
-                <label>Member Roles</label>
-                <select name="roles" multiple id="roles">
-                    <% for (var i in roles) {%>
-                    <option value="<%=roles[i].id%>" 
-                        <%if (members.roles.indexOf(roles[i].id) != "-1") {%>
-                        selected
-                        <%}%>>
-                        <%=roles[i].name%>
-                    </option>
-                    <%}%>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-         <div class="col-sm-9">
-             <label>If PCO, what Precinct assigned?</label>
-             <select name="service_precinct" id="service_precinct" class="form-control">
-                <option></option>
-                <% for (var i in precinct) {%>
-                <option value="<%=precinct[i].id%>" 
-                    <%if (members.service_precinct && members.service_precinct.id == precinct[i].id) {%> 
-                    selected
-                    <%}%>
-                    ><%=precinct[i].name%></option>
-                    <%}%>
-                </select>
-            </div>
-            <div class="col-sm-3">
-                <br />
-                <button type="button" class="btn btn-warning btn-sm" onclick="$('#service_precinct').val($('#residential_precinct').val());">Use Residential</button>
-            </div>
-        </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-4">
+        <label>Member Interests</label>
+        <select name="interests" multiple id="interests">
 
-        <button type="submit" class="btn btn-warning btn-lg">Update</button>
-    </form>
+            <% for (var i in interests) {%>
+            <option value="<%=interests[i].id%>"
+                <%if (members.interests.indexOf(interests[i].id) != "-1") {%>
+                selected
+                <%}%>
+                >
+                <%=interests[i].name%>
+            </option>
+            <%}%>
+        </select>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-6">
+        <label>Member Roles</label>
+        <select name="roles" multiple id="roles">
+            <% for (var i in roles) {%>
+            <option value="<%=roles[i].id%>" 
+                <%if (members.roles.indexOf(roles[i].id) != "-1") {%>
+                selected
+                <%}%>>
+                <%=roles[i].name%>
+            </option>
+            <%}%>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+   <div class="col-sm-9">
+       <label>If PCO, what Precinct assigned?</label>
+       <select name="service_precinct" id="service_precinct" class="form-control">
+        <option></option>
+        <% for (var i in precinct) {%>
+        <option value="<%=precinct[i].id%>" 
+            <%if (members.service_precinct && members.service_precinct.id == precinct[i].id) {%> 
+            selected
+            <%}%>
+            ><%=precinct[i].name%></option>
+            <%}%>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <br />
+        <button type="button" class="btn btn-warning btn-sm" onclick="$('#service_precinct').val($('#residential_precinct').val());">Use Residential</button>
+    </div>
+</div>
+    <button type="submit" class="btn btn-warning btn-lg">Update</button> &nbsp;&nbsp; <a href="/membership/members">Return to List</a>
 
-    <a href="/membership/members">Return to List</a>
+</form>
 </div>
 </div>
 
