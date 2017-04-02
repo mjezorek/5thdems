@@ -6,7 +6,6 @@ var MemberRoles = require('./memberroles');
 var Precinct = require('./precinct');
 var Meetings = require('./meetings');
 var async = require('async');
-mongoose.set('debug', true);
 
 var memberSchema = mongoose.Schema({
 	first_name: {type:String,default:""},
