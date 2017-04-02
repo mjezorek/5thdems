@@ -226,9 +226,6 @@ router.post('/members/details/:id', function(req, res) {
 			console.log(err);
 			throw err;
 		}
-		if(p) {
-			console.log(p);
-		} 
 		req.flash("members", "Updated member record");
 		res.redirect('/membership/members/details/' + req.params.id);
 	});
