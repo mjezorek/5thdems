@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+.members tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height:30px;
+}
+</style>
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+ <tr bgcolor="#214761">
+  <td>
+  <a class="navbar-brand" href="/membership">
+          <img src="/images/logo.png" />
+
+        </a>
+  </td>
+  <td><font color="#fff"><%=meetings.name%> <br /><b>Date:</b> <%=meetings.date%></font></td>
+</tr>
+<tr>
+ <td colspan="2">
+
+<table class="members" border="0" cellspacing="0" cellpadding="0" width="100%" class="table table-striped">
+<thead>
+<tr>
+ <td width="20%"><b>First Name</b></td>
+ <td width="20%"><b>Last Name</b></td>
+ <td width="20%"><b>Address</b></td>
+ <td width="15%"><b>Email</b></td>
+ <td width="15%"><b>Phone</b></td>
+ <td width="10%"><b>Sign In</b></td>
+</tr>
+</thead>
+<tbody>
+ <% for (var i =0; i <= 40; i++) {%>
+
+        <tr>
+          <td width="20%"></td>
+          <td width="20%"></td>
+          <td width="20%"><br /><br /></td>
+          <td width="15%"></td>
+          <td width="15%"></td>
+          <td width="10%"></td>
+        </tr>
+      <%}%>
+    </tbody>
+</table>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

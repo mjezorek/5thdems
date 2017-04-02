@@ -1,0 +1,56 @@
+   <% include ../../app/header %>
+   <div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+         <h2>Member List</h2>   
+       </div>
+     </div>         
+     <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>     
+     <!-- /. ROW  -->
+     <hr />
+     <div class="row">
+      <div class="col-lg-12 ">
+      <a href="/membership/members/add"><i class="fa fa-plus">Add Member</i></a>
+      <table id="members" class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>First Name</b></td>
+          <td><b>Last Name</b></td>
+          <td><b>Address</b></td>
+          <td><b>Email</b></td>
+          <td><b>Phone</b></td>
+          <td><b>Precinct</b></td>
+            <td><b>Edit/Delete</b></td>
+          </tr>
+        </thead>
+        <tbody>
+        <% for (var i in members) {%>
+        <tr>
+          <td><%= members[i].first_name %></td>
+          <td><%= members[i].last_name %></td>
+          <td><%= members[i].address %><br />
+          <%= members[i].city %> <%= members[i].state %>, <%= members[i].zip %></td>
+          <td><%= members[i].email %></td>
+          <td>M:<%= members[i].mobile_phone %> <br />H:<%= members[i].home_phone %></td>
+          <% if(members[i].residential_precinct) {%>
+          <td><%= members[i].residential_precinct.name %></td>
+          <%} else { %><td></td> <%}%>
+          <td><a href="/membership/members/details/<%=members[i].id%>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a href="/membership/members/delete/<%=members[i].id%>"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <%}%>
+      
+        </tbody>
+        </table>
+        <a href="/membership/members/add"><i class="fa fa-plus">Add Member</i>
+      </div>
+    </div>
+    <!-- /. ROW  --> 
+
+
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<% include ../../app/footer %>

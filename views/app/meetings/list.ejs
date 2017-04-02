@@ -1,0 +1,55 @@
+   <% include ../../app/header %>
+   <div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+         <h2>Meetings</h2>   
+       </div>
+     </div>         
+     <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>     
+     <!-- /. ROW  -->
+     <hr />
+     <div class="row">
+      <div class="col-lg-12 ">
+      <a href="/membership/meetings/add"><i class="fa fa-plus">Add Meeting</i></a> &nbsp;&nbsp; <a href="/membership/meetings/showold"><i class="fa fa-plus">Show Old Meetings</i></a>
+      <table id="meetings" class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>Meeting</b></td>
+            <td><b>Location</b></td>
+            <td><b>Date</b></td>
+            <td><b>Type</b></td>
+            <td><b>Location</b></td>
+            <td><b>Sign In Sheets</b></td>
+            <td><b>Attendance</b></td>
+            <td><b>Delete</b></td>
+          </tr>
+        </thead>
+        <% for (var i in meetings) {%>
+        <tr>
+          <td><%= meetings[i].name %></td>
+          <td><%= meetings[i].location %></td>
+          <td><%= meetings[i].date %></td>
+          <td><%= meetings[i].type %></td>
+          <td><%= meetings[i].location %></td>
+          <td><a href="/membership/meetings/signin-blank/<%=meetings[i].id%>"><i class="fa fa-file-o"></i></a>&nbsp;<a href="/membership/meetings/signin/<%=meetings[i].id%>"><i class="fa fa-sign-in"></i></a></td>
+          <td><a href="/membership/meetings/attendance/<%=meetings[i].id%>"><i class="fa fa-address-book"></i></a></td>
+          <td><a href="/membership/meetings/delete/<%=meetings[i].id%>"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <%}%>
+        <tbody>
+        </tbody>
+        </table>
+        <a href="/membership/meetings/add"><i class="fa fa-plus">Add Meeting</i></a> &nbsp;&nbsp; <a href="/membership/meetings/showold"><i class="fa fa-plus">Show Old Meetings</i></a>
+
+      </div>
+    </div>
+    <!-- /. ROW  --> 
+
+
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<% include ../../app/footer %>

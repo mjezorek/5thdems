@@ -1,0 +1,25 @@
+ <% include ../../app/header %>
+ <div id="page-wrapper" >
+          <div id="page-inner">
+
+    <h1><span class="fa fa-sign-in"></span>Bulk Add Precinct</h1>
+
+    <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+    <div class="info">The uploaded file must be a CSV in the following order<br />
+    <code>Code, Name, Congressional District, Legislative District, King Country District</code>
+    </div>
+    <form action="/membership/precinct/bulk" encType="multipart/form-data" method="post">
+    <div class="form-group">
+            <label>File</label>
+            <input type="file" class="form-control" name="bulkUpload">
+        </div>
+        <button type="submit" class="btn btn-warning btn-lg">Process File</button>
+    </form>
+
+    <a href="/membership/precinct">Return to List</a>
+    </div>
+    </div>
+ <% include ../../app/footer %>

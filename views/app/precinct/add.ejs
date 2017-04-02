@@ -1,0 +1,39 @@
+ <% include ../../app/header %>
+ <div id="page-wrapper" >
+          <div id="page-inner">
+
+    <h1><span class="fa fa-sign-in"></span>New Precinct</h1>
+
+    <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <form action="/membership/precinct/add" method="post">
+    <div class="form-group">
+            <label>Code</label>
+            <input type="text" class="form-control" name="precinct_code">
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="precinct_name">
+        </div>
+        <div class="form-group">
+            <label>Legislative District</label>
+            <input type="text" class="form-control" name="leg">
+        </div>
+        <div class="form-group">
+            <label>Congressional District</label>
+            <input type="text" class="form-control" name="cong">
+        </div>
+        <div class="form-group">
+            <label>King County District</label>
+            <input type="text" class="form-control" name="kc">
+        </div>
+        <button type="submit" class="btn btn-warning btn-lg">Add</button>
+    </form>
+
+    <a href="/membership/precinct">Return to List</a>
+    </div>
+    </div>
+ <% include ../../app/footer %>

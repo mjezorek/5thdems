@@ -1,0 +1,165 @@
+   <% include ../app/header %>
+   <div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+         <h2>Dashboard </h2>   
+       </div>
+     </div>              
+     <!-- /. ROW  -->
+     <hr />
+     <div class="row">
+      <div class="col-lg-12 ">
+        <div class="alert alert-info">
+          <strong>Welcome <%= locals.name %> ! </strong>
+        </div>
+
+      </div>
+    </div>
+    <!-- /. ROW  --> 
+    <!-- General -->
+    <div class="row text-center pad-top">
+    <h4>Reports</h4>
+     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/reports/members" ><i class="fa fa-user-o fa-3x"></i><h5>Member Reports</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/reports/precincts" ><i class="fa fa-map-o fa-3x"></i><h5>Precinct Reports</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/reports/meetings" ><i class="fa fa-calendar-o fa-3x"></i><h5>Meeting Reports</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/reports/others" ><i class="fa fa-random fa-3x"></i><h5>Other Reports</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    <div class="div-square">
+        <a href="/membership/reports/new" ><i class="fa fa-plus-circle fa-4x"></i><h5>New Reports</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+    </div>
+    <!-- General -->
+    <div class="row text-center pad-top">
+    <h4>Membership</h4>
+     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/members" ><i class="fa fa-users fa-4x"></i><h5>Member List</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/members/add" ><i class="fa fa-user-plus fa-4x"></i><h5>New Member</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/members/roles" ><i class="fa fa-user-circle fa-4x"></i><h5>Member Roles</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    <div class="div-square">
+        <a href="/membership/members/types" ><i class="fa fa-id-card-o fa-4x"></i><h5>Member Types</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    <div class="div-square">
+        <a href="/membership/members/bulk"><i class="fa fa-upload fa-3x"></i><h5>Bulk Add Members</h5></a>
+      </div>
+    </div> 
+    
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+    </div>
+    <!-- Meetings -->
+    <div class="row text-center pad-top">
+    <h4>Meetings</h4>
+     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/meetings"><i class="fa fa-calendar fa-4x"></i><h5>Meetings</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/meetings/add"><i class="fa fa-calendar-plus-o fa-3x"></i><h5>New Meeting</h5></a>
+      </div>
+    
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    <div class="div-square">
+        <a href="/membership/meetings/attendance"><i class="fa fa-calendar-check-o fa-4x"></i><h5>Attendance</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+  </div>
+  <!-- Precincts -->
+    <div class="row text-center pad-top">
+    <h4>Precincts</h4>
+     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/precinct"><i class="fa fa-map fa-4x"></i><h5>Precincts</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    <div class="div-square">
+        <a href="/membership/precinct/add"><i class="fa fa-map-pin fa-3x"></i><h5>New Precinct</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    <div class="div-square">
+        <a href="/membership/precinct/bulk"><i class="fa fa-upload fa-3x"></i><h5>Bulk Add Precinct</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+  </div>
+    <!-- Administration -->
+    <div class="row text-center pad-top">
+    <h4>Miscellaneous</h4>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    <div class="div-square">
+        <a href="/membership/interests"><i class="fa fa-tags fa-4x"></i><h5>Interests</h5></a>
+      </div>
+    </div> 
+     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+      <div class="div-square">
+        <a href="/membership/admins"><i class="fa fa-list fa-4x"></i><h5>Admin List</h5></a>
+      </div>
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    <div class="div-square">
+        <a href="/membership/addadmin"><i class="fa fa-plus fa-3x"></i><h5>New Admin</h5></a>
+      </div>
+    </div> 
+    
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+    </div> 
+  </div>
+
+
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<% include ../app/footer %>

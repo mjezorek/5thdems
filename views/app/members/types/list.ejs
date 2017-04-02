@@ -1,0 +1,42 @@
+   <% include ../../../app/header %>
+   <div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+         <h2>Membership Types</h2>   
+       </div>
+     </div>         
+     <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>     
+     <!-- /. ROW  -->
+     <hr />
+     <div class="row">
+      <div class="col-lg-12 ">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>Membership Type</b></td>
+            <td><b>Membership Cost</b></td>
+            <td><b>Delete</b></td>
+          </tr>
+        </thead>
+        <% for (var i in membertype) {%>
+        <tr>
+          <td><%= membertype[i].name %></td>
+          <td>$<%= membertype[i].cost %></td>
+          <td><a href="/membership/members/types/delete/<%=membertype[i].id%>"><i class="fa fa-trash"></i></a>
+        <%}%>
+        <tbody>
+        </tbody>
+        </table>
+        <a href="/membership/members/types/add"><i class="fa fa-plus">Add Membership Type</i>
+      </div>
+    </div>
+    <!-- /. ROW  --> 
+
+
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<% include ../../../app/footer %>

@@ -1,0 +1,30 @@
+{
+  "name": "5thdemsmembership",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "express": "~4.14.1",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2",
+    "mongoose": "latest",
+    "passport": "latest",
+    "passport-local":"latest",
+    "connect-flash": "latest",
+    "bcrypt-nodejs": "latest",
+    "express-session": "latest",
+    "bluebird": "*",
+    "express-fileupload": "latest",
+    "os-tmpdir": "latest",
+    "fast-csv": "latest",
+    "mongoose-tags": "latest",
+    "async": "latest",
+    "mongoose-autorefs": "latest"
+  }
+}

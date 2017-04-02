@@ -1,0 +1,21 @@
+ <% include ../../app/header %>
+ <div id="page-wrapper" >
+          <div id="page-inner">
+
+    <h1><span class="fa fa-sign-in"></span>New Interest</h1>
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <form action="/membership/interests/add" method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name">
+        </div>
+        <button type="submit" class="btn btn-warning btn-lg">Add</button>
+    </form>
+
+    <a href="/membership/interests">Return to List</a>
+    </div>
+    </div>
+ <% include ../../app/footer %>

@@ -1,0 +1,35 @@
+ <% include ../../app/header %>
+ <div id="page-wrapper" >
+          <div id="page-inner">
+
+    <h1><span class="fa fa-sign-in"></span> New Administrator</h1>
+
+    <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+
+    <!-- LOGIN FORM -->
+    <form action="/membership/addadmin" method="post">
+    <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="first_name">
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="last_name">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+    </form>
+    </div>
+    </div>
+ <% include ../../app/footer %>

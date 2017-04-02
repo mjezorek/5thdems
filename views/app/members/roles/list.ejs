@@ -1,0 +1,44 @@
+   <% include ../../../app/header %>
+   <div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+         <h2>Membership Roles</h2>   
+       </div>
+     </div>         
+     <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>     
+     <!-- /. ROW  -->
+     <hr />
+     <div class="row">
+      <div class="col-lg-12 ">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>Membership Role</b></td>
+            <td><b>E-Board Member</b></td>
+            <td><b>Voting Member</b></td>
+            <td><b>Delete</b></td>
+          </tr>
+        </thead>
+        <% for (var i in membertype) {%>
+        <tr>
+          <td><%= membertype[i].name %></td>
+          <td><%= membertype[i].eboard %></td>
+          <td><%= membertype[i].voting %></td>
+          <td><a href="/membership/members/roles/delete/<%=membertype[i].id%>"><i class="fa fa-trash"></i></a>
+        <%}%>
+        <tbody>
+        </tbody>
+        </table>
+        <a href="/membership/members/roles/add"><i class="fa fa-plus">Add Membership Role</i>
+      </div>
+    </div>
+    <!-- /. ROW  --> 
+
+
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<% include ../../../app/footer %>

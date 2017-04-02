@@ -1,0 +1,49 @@
+   <% include ../../app/header %>
+   <div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+         <h2>Precincts </h2>   
+       </div>
+     </div>         
+     <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>     
+     <!-- /. ROW  -->
+     <hr />
+     <div class="row">
+      <div class="col-lg-12 ">
+      <table id="pdata" class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>Code</b></td>
+            <td><b>Name</b></td>
+            <td><b>Congressional</b></td>
+            <td><b>Legislative</b></td>
+            <td><b>King County</b></td>
+            <td><b>Delete</b></td>
+          </tr>
+        </thead>
+        <tbody>
+        <% for (var i in precincts) {%>
+        <tr>
+          <td><%= precincts[i].code %></td>
+          <td><%= precincts[i].name %></td>
+          <td><%= precincts[i].congressional_district %></td>
+          <td><%= precincts[i].legislative_district %></td>
+          <td><%= precincts[i].kingcounty_district %></td>
+          <td><a href="/membership/precinct/delete/<%=precincts[i].id%>"><i class="fa fa-trash"></i></a>
+        </tr>
+        <%}%>
+        </tbody>
+        </table>
+        <a href="/membership/precinct/add"><i class="fa fa-plus">Add Precinct</i>
+      </div>
+    </div>
+    <!-- /. ROW  --> 
+
+
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<% include ../../app/footer %>

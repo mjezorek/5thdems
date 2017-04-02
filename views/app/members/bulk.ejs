@@ -1,0 +1,26 @@
+ <% include ../../app/header %>
+ <div id="page-wrapper" >
+          <div id="page-inner">
+
+    <h1><span class="fa fa-sign-in"></span>Bulk Add Members</h1>
+
+    <!-- show any messages that come back with authentication -->
+    <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+    <div class="info">The uploaded file must be a CSV in the following order<br />
+    <code>ID,First Name,Last Name,Address Line 1,Address Line 2,State ,City,Postal Code Residential Precinct,CD,LD,Email,Mobile Phone,Home Phone,Issues of Interest,Role(s),Service Precinct,Membership Type,Date Paid,Family,Have Registration Form,Send Membership Email,Send Newsletter
+</code>
+    </div>
+    <form action="/membership/members/bulk" encType="multipart/form-data" method="post">
+    <div class="form-group">
+            <label>File</label>
+            <input type="file" class="form-control" name="bulkUpload">
+        </div>
+        <button type="submit" class="btn btn-warning btn-lg">Process File</button>
+    </form>
+
+    <a href="/membership/members">Return to List</a>
+    </div>
+    </div>
+ <% include ../../app/footer %>

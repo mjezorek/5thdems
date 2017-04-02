@@ -1,0 +1,41 @@
+   <% include ../../app/header %>
+   <div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+         <h2>Administrators </h2>   
+       </div>
+     </div>              
+     <!-- /. ROW  -->
+     <hr />
+     <div class="row">
+      <div class="col-lg-12 ">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>First Name</b></td>
+            <td><b>Last Name</b></td>
+            <td><b>Email</b></td>
+            <td><b>Delete</b></td>
+          </tr>
+        </thead>
+        <% for (var i in users) {%>
+        <tr>
+          <td><%= users[i].firstName %></td>
+          <td><%= users[i].lastName %></td>
+          <td><%= users[i].email %></td>
+          <td><a href="/membership/admins/delete/<%=users[i].id%>"><i class="fa fa-trash"></i></a>
+        <%}%>
+        <tbody>
+        </tbody>
+        </table>
+        <a href="/membership/addadmin"><i class="fa fa-plus">Add Administrator</i>
+      </div>
+    </div>
+    <!-- /. ROW  --> 
+
+
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<% include ../../app/footer %>
