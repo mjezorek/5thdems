@@ -51,7 +51,7 @@ router.post('/bulk', function(req, res) {
 		req.flash('precinct', "No files uploaded, please select a file to contine");
 		res.redirect('/membership/precinct/bulk');
 	}
-	let csv = req.files.bulkUpload;
+	var csv = req.files.bulkUpload;
 	var file = osTmpDir() + "/precinct.csv";
 	csv.mv(file);
 	CSV.fromPath(file).on("data", function(data) {
