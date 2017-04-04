@@ -30,7 +30,7 @@
         <tr>
           <td><%= meetings[i].name %></td>
           <td><%= meetings[i].location %></td>
-          <td><%= meetings[i].date %></td>
+          <td class="date-time-format"><%= meetings[i].date %></td>
           <td><% if (meetings[i].type == "eboard") { %>E-Board<%} else if(meetings[i].type == "general") { %>General<%} else {%>Committee<%}%>
           </td>
           <td><a href="/membership/meetings/signin-blank/<%=meetings[i].id%>"><i class="fa fa-file-o"></i></a>&nbsp;<a href="/membership/meetings/signin/<%=meetings[i].id%>"><i class="fa fa-sign-in"></i></a></td>

@@ -133,3 +133,8 @@ $('#pdata').dataTable({
  $('#datetimepicker1').datetimepicker();
 
  $('#member_select_list').select2();
+
+ $("table td.date-time-format").map(function() {
+    var o = $(this).text();
+    $(this).text(moment(o).format('MM/DD/YYYY h:mm a'));
+ });
