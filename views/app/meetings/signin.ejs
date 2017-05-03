@@ -41,7 +41,7 @@ body {
 </thead>
 <tbody>
  <% for (var i in members) {%>
- <%if(members[i].roles || members[i].roles.length > 0) {%>
+ <%if(members[i].roles && members[i].roles.length > 0) {%>
         <tr>
           <td><%= members[i].first_name %></td>
           <td><%= members[i].last_name %></td>
