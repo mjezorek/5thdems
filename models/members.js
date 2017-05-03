@@ -33,6 +33,7 @@ var memberSchema = mongoose.Schema({
 	interest_string: {type:String,default:""},
 	date_paid: Date,
 	tags: [String],
+	comments: {type: String, default: ""}
 
 },{
 	timestamps: true

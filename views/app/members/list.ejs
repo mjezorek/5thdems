@@ -23,7 +23,8 @@
           <td><b>Email</b></td>
           <td><b>Phone</b></td>
           <td><b>Precinct</b></td>
-            <td><b>Edit/Delete</b></td>
+          <td><b>PCO</b></td>
+          <td><b>Edit/Delete</b></td>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +39,7 @@
           <% if(members[i].residential_precinct) {%>
           <td><%= members[i].residential_precinct.name %></td>
           <%} else { %><td></td> <%}%>
+          <td><% if (members[i].service_precinct) {%> Yes - <%= members[i].service_precinct.name %><%}%></td>
           <td><a href="/membership/members/details/<%=members[i].id%>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a href="/membership/members/delete/<%=members[i].id%>"><i class="fa fa-trash"></i></a></td>
         </tr>
         <%}%>

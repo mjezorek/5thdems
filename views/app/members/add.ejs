@@ -247,7 +247,7 @@
            <div class="col-sm-9">
                <label>If PCO, what Precinct assigned?</label>
                <select name="service_precinct" id="service_precinct" class="form-control">
-                <option>No Precinct Selected</option>
+                <option></option>
                 <% for (var i in precinct) {%>
                 <option value="<%=precinct[i].id%>"><%=precinct[i].name%></option>
                 <%}%>
@@ -258,7 +258,12 @@
             <button type="button" class="btn btn-warning btn-sm" onclick="$('#service_precinct').val($('#residential_precinct').val());">Use Residential</button>
         </div>
     </div>
-    
+     <div class="form-group">
+           <div class="col-sm-12">
+               <label>Comments</label>
+               <textarea name="comments" class="form-control" ></textarea>
+        </div>
+<br /><br /><br /><br /><br />
     <button type="submit" class="btn btn-warning btn-lg">Add</button>
 </form>
 

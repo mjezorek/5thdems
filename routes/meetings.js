@@ -71,11 +71,11 @@ router.post('/attendance/:id', function(req, res) {
 	Meetings.findOneAndUpdate({'_id': req.params.id}, {$set: {attendance: []}}, {upsert: true}, function(err, p) {if(err) { throw err;}});
 	if(req.body.attendance) {
 		if(typeof req.body.attendance == "string") {
-			Meetings.findOneAndUpdate({'_id': req.params.id}, {$push: {attendance: mongoose.Types.ObjectId(req.body.attendance )}}, {upsert: true}, function(err, p) {if(err) throw err;});
+			Meetings.findOneAndUpdate({'_id': req.params.id}, {$push: {attendance: mongoose.Types.ObjectId(req.body.attendance )}, $set: {comments: req.body.comments}}, {upsert: true}, function(err, p) {if(err) throw err;});
 		} else {
 			console.log("in else");
 			for(i in req.body.attendance) {
-				Meetings.findOneAndUpdate({'_id': req.params.id}, {$push: {attendance: mongoose.Types.ObjectId(req.body.attendance[i] )}}, {upsert: true}, function(err, p) {if(err) throw err;});
+				Meetings.findOneAndUpdate({'_id': req.params.id}, {$push: {attendance: mongoose.Types.ObjectId(req.body.attendance[i] )}, $set: {comments: req.body.comments}}, {upsert: true}, function(err, p) {if(err) throw err;});
 			}
 		}
 	}

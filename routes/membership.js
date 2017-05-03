@@ -175,7 +175,7 @@ router.get('/members/roles/delete/:id', function(req, res) {
 
 //// member pages
 router.get('/members/add', function(req, res) {
-	Precinct.find({},null, {sort: {name: 1}}, function(err, precinct) {
+	Precinct.find({},null, {sort: {legislative_district: 1}}, function(err, precinct) {
 		MemberTypes.find({}, function(err, membertypes) {
 			MemberRoles.find({}, function(err, roles) {
 				Interests.find({}, function(err, interest) {
@@ -319,7 +319,7 @@ router.get('/members/bulk', function(req, res) {
 });
 
 router.get('/members', function(req, res) {
-	Members.find({},null, {sort: {last_name:1}}).populate("residential_precinct").exec(function (err, data) {
+	Members.find({},null, {sort: {last_name:1}}).populate("residential_precinct").populate("service_precinct").exec(function (err, data) {
 		res.render('app/members/list',  {members: data, message: req.flash('members')});
 	});
 });
@@ -346,12 +346,15 @@ router.post('/members/add', function(req, res) {
 				newMember.mobile_phone = req.body.mobile_phone;
 				newMember.home_phone = req.body.home_phone;
 				newMember.residential_precinct = req.body.residential_precinct;
-				newMember.service_precinct = req.body.service_precinct;
+				if(req.body.service_precinct != "") {
+					newMember.service_precinct = req.body.service_precinct;
+				}
 				newMember.membership_type = req.body.membership_type;
 				newMember.roles = req.body.roles;
 				newMember.interests = req.body.interests;
 				newMember.date_paid = req.body.last_paid;
 				newMember.tags = req.body.tags;
+				newMember.comments = req.body.comments;
 				newMember.save(function(err) {
 					if(err) {
 						throw err;

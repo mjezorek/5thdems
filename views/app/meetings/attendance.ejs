@@ -23,7 +23,7 @@
     </div>
     <hr />
     <div class="form-group">
-     <div class="col-sm-6">
+     <div class="col-sm-12">
        <label>Members</label>
        <select multiple class="form-control" id="member_select_list" name="attendance">
        <% for(i in members) { %>
@@ -34,6 +34,12 @@
           ><%=members[i].first_name%> <%=members[i].last_name %></option>
          <%}%>
        </select>
+     </div>
+    </div>
+    <div class="form-group">
+     <div class="col-sm-12">
+       <label>Additional Members or Comments</label>
+       <textarea name="comments" class="form-control" ><%= meetings.comments %></textarea>
      </div>
     </div>
     <br /><br /> <br /><br /> <br /><br />

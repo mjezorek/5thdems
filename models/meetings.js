@@ -7,6 +7,7 @@ var meetingsSchema = mongoose.Schema({
 	list: {type: Boolean, default: true},
 	type: { type: String, enum: ["eboard", "general", "committee"], default: 'general'},
 	attendance: [{type: mongoose.Schema.Types.ObjectId, ref: "Members"}],
+	comments: {type: String}
 },{
 	timestamps: true
 });

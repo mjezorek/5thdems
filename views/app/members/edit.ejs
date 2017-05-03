@@ -226,13 +226,22 @@
             <%}%>
         </select>
     </div>
+ 
     <div class="col-sm-3">
         <br />
         <button type="button" class="btn btn-warning btn-sm" onclick="$('#service_precinct').val($('#residential_precinct').val());">Use Residential</button>
     </div>
 </div>
+   <div class="form-group">
+           <div class="col-sm-12">
+               <label>Comments</label>
+               <textarea name="comments" class="form-control" ><%=members.comments%></textarea>
+        </div>
+    <div class="form-group">
+           <div class="col-sm-12"><br />
     <button type="submit" class="btn btn-warning btn-lg">Update</button> &nbsp;&nbsp; <a href="/membership/members">Return to List</a>
-
+</div>
+</div>
 </form>
 </div>
 </div>
