@@ -1,0 +1,49 @@
+   <% include ../../app/header %>
+   <div id="page-wrapper" >
+    <div id="page-inner">
+      <div class="row">
+        <div class="col-md-12">
+         <h2>Member List</h2>   
+       </div>
+     </div>         
+     <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>     
+     <!-- /. ROW  -->
+     <hr />
+     <div class="row">
+      <div class="col-lg-12 ">
+      <table id="members" class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>First Name</b></td>
+          <td><b>Last Name</b></td>
+          <td><b>Address</b></td>
+          <td></td>
+          </tr>
+        </thead>
+        <tbody>
+        <% for (var i in members) {%>
+        <tr>
+          <td><%= members[i].first_name %></td>
+          <td><%= members[i].last_name %></td>
+          <td><%= members[i].address %><br />
+          <td>
+          <form action="/membership/members/family/add/<%=member_id%>" class="form-horizontal" method="post"><input type="hidden" name="member_id" value="<%=members[i].id%>"><button type="submit" class="btn btn-warning btn-sm">Add to Family</button></form>
+          </form>
+          </td>
+        </tr>
+        <%}%>
+      
+        </tbody>
+        </table>
+        <a href="/membership/members/add"><i class="fa fa-plus">Add Member</i>
+      </div>
+    </div>
+    <!-- /. ROW  --> 
+
+
+</div>
+<!-- /. PAGE INNER  -->
+</div>
+<% include ../../app/footer %>

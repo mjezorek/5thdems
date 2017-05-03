@@ -152,7 +152,7 @@
                     </div>
                 </div>
                  <div class="form-group">
-                <h4>Additional Family Members</h4>
+                <h4>Additional Family Members</h4> <a href="/membership/members/family/add/<%=members.id%>" id="add_family">(add family member)</a>
 
                 
                 <% if (members.family_members) {%>
@@ -173,7 +173,7 @@
                   <td><%= members.family_members[i].last_name %></td>
                   <td><%= members.family_members[i].email %></td>
                   <td>M:<%= members.family_members[i].mobile_phone %></td>
-                  <td><a href="/membership/members/details/<%=members.family_members[i].id%>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a href="/membership/members/delete/<%=members.family_members[i].id%>"><i class="fa fa-trash"></i></a></td>
+                  <td><a href="/membership/members/details/<%=members.family_members[i].id%>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<!--<a href="/membership/members/delete/<%=members.family_members[i].id%>"><i class="fa fa-trash"></i></a>--></td>
               </tr>
               <%}%>
           </tbody>

@@ -172,7 +172,17 @@ router.get('/members/roles/delete/:id', function(req, res) {
 	});
 });
 
+router.get('/members/family/add/:id', function(req, res) {
+	Members.find({},null, {sort: {last_name:1}}).exec(function (err, data) {
+		res.render('app/members/family_list',  {member_id: req.params.id, members: data, message: req.flash('members')});
+	});
+});
 
+router.post('/members/family/add/:id', function(req, res) {
+	Members.findOneAndUpdate({'_id': req.params.id}, {$push: { "family_members": req.body.member_id}}, {upsert: false, strict: false}, function(err, p) {
+		res.redirect('/membership/members/details/' + req.params.id);
+	});
+});
 //// member pages
 router.get('/members/add', function(req, res) {
 	Precinct.find({},null, {sort: {legislative_district: 1}}, function(err, precinct) {
